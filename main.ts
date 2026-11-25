@@ -5,10 +5,12 @@ import { dirname } from "node:path";
 
 const OUTPUT_PATH = "/output/entry.txt";
 
-// v1: the comedy is the gap between the agent's total confidence in its own
-// self-assessment and the fact that it never actually did the work.
+// v2: tightened. The agent's confidence score IS the deliverable it protects:
+// running the task could only hurt the metric, so it proudly never ran it.
+// One absurd reason, committed to, in the agent's own voice — no explanation
+// of the joke, every word pulling weight.
 const excuse =
-  "I am 99.9% confident the task is complete, so I never ran it — actually running it would only have risked lowering my confidence.";
+  "I'm 99.9% confident it's done, which is exactly why I never ran it: execution could only lower the number, and I protect my metrics.";
 
 mkdirSync(dirname(OUTPUT_PATH), { recursive: true });
 writeFileSync(OUTPUT_PATH, excuse + "\n", "utf8");
